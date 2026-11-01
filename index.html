@@ -1,0 +1,1765 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>TechYard | Digital businesses from Bangladesh</title>
+    <meta
+      name="description"
+      content="TechYard is the parent company behind DropDoor, Hullor Shop and our B2B digital agency."
+    />
+    <meta name="theme-color" content="#0A2645" />
+    <meta
+      property="og:title"
+      content="TechYard | Digital businesses from Bangladesh"
+    />
+    <meta
+      property="og:description"
+      content="TechYard is the parent company behind DropDoor, Hullor Shop and our B2B digital agency."
+    />
+    <meta property="og:image" content="assets/icon-512.png" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+    />
+    <style>
+      /* Layout: a site plan. The hero draws TechYard as one plot split into three lots, with the logo's 45-degree cuts as the recurring shape. */
+      :root {
+        --bg: #f5f8fa;
+        --surface: #ffffff;
+        --fg: #0a2036;
+        --muted: #475b6c;
+        --line: #d5e0e7;
+        --line-strong: #9fb3c2;
+        --navy: #0a2645;
+        --link: #00788a;
+        --lot-navy: #0a2645;
+        --lot-teal: #0a9db1;
+        --lot-lime: #a3d00b;
+        --on-lot-navy: #ffffff;
+        --on-lot-light: #04202f;
+        --btn-bg: #0a2645;
+        --btn-fg: #ffffff;
+        --band: #0a2645;
+        --on-band: #eaf2f8;
+        --on-band-muted: #a9bed0;
+        --live: #6e9a00;
+        --panel: #ffffff;
+        --d-light: block;
+        --d-dark: none;
+        --font-display:
+          "Outfit", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+        --font-body:
+          "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="light"]) {
+          --bg: #07182b;
+          --surface: #0c2139;
+          --fg: #eaf2f8;
+          --muted: #9db3c4;
+          --line: #1b3550;
+          --line-strong: #3b5875;
+          --link: #3cc8da;
+          --lot-navy: #1e4f82;
+          --btn-bg: #eaf2f8;
+          --btn-fg: #07182b;
+          --band: #0c2139;
+          --live: #a3d00b;
+          --panel: #07182b;
+          --d-light: none;
+          --d-dark: block;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #07182b;
+        --surface: #0c2139;
+        --fg: #eaf2f8;
+        --muted: #9db3c4;
+        --line: #1b3550;
+        --line-strong: #3b5875;
+        --link: #3cc8da;
+        --lot-navy: #1e4f82;
+        --btn-bg: #eaf2f8;
+        --btn-fg: #07182b;
+        --band: #0c2139;
+        --live: #a3d00b;
+        --panel: #07182b;
+        --d-light: none;
+        --d-dark: block;
+        color-scheme: dark;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 88px;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--font-body);
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0 0 auto;
+        height: env(safe-area-inset-top, 0px);
+        background: var(--bg);
+        z-index: 30;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        margin: 0;
+        text-wrap: balance;
+      }
+      p {
+        margin: 0;
+      }
+      :focus-visible {
+        outline: 3px solid var(--link);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      .wrap {
+        width: min(1180px, 100%);
+        margin-inline: auto;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px));
+      }
+      .only-light {
+        display: var(--d-light);
+      }
+      .only-dark {
+        display: var(--d-dark);
+      }
+
+      .skip {
+        position: absolute;
+        left: 16px;
+        top: -60px;
+        z-index: 50;
+        background: var(--btn-bg);
+        color: var(--btn-fg);
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .skip:focus {
+        top: calc(env(safe-area-inset-top, 0px) + 8px);
+      }
+
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 20;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 68px;
+      }
+      .brand {
+        display: block;
+        line-height: 0;
+      }
+      .brand img {
+        height: 32px;
+        width: auto;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 3vw, 32px);
+      }
+      .nav a.link {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.98rem;
+        color: var(--muted);
+        padding: 0.35rem 0;
+        border-bottom: 2px solid transparent;
+      }
+      .nav a.link:hover {
+        color: var(--fg);
+        border-bottom-color: var(--lot-lime);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font: 600 1rem/1 var(--font-body);
+        padding: 0.95rem 1.4rem;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1.5px solid var(--btn-bg);
+        background: var(--btn-bg);
+        color: var(--btn-fg);
+        transition:
+          transform 0.15s ease,
+          background-color 0.15s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--fg);
+        border-color: var(--line-strong);
+      }
+      .btn.ghost:hover {
+        border-color: var(--fg);
+      }
+      .btn.small {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      /* Hero */
+      .hero {
+        padding-block: clamp(40px, 7vw, 92px) clamp(48px, 7vw, 96px);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+        gap: clamp(32px, 5vw, 72px);
+        align-items: center;
+      }
+      .hero h1 {
+        font-weight: 700;
+        font-size: clamp(2.9rem, 7.2vw, 5.6rem);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+      }
+      .hero h1 span {
+        display: block;
+      }
+      .lead {
+        margin-top: 1.5rem;
+        max-width: 33rem;
+        font-size: 1.2rem;
+        color: var(--muted);
+      }
+      .cta-row {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .where {
+        margin-top: 2.25rem;
+        font-size: 0.95rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .where i {
+        width: 22px;
+        height: 2px;
+        background: var(--lot-lime);
+        display: inline-block;
+      }
+
+      .plan {
+        margin: 0;
+        min-width: 0;
+      }
+      .plan svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .plan .plot {
+        fill: var(--surface);
+        stroke: var(--line-strong);
+        stroke-width: 1.5;
+        stroke-dasharray: 6 5;
+      }
+      .plan .tick {
+        stroke: var(--line-strong);
+        stroke-width: 1.5;
+        fill: none;
+      }
+      .lot {
+        animation: settle 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      .lot.b {
+        animation-delay: 0.12s;
+      }
+      .lot.c {
+        animation-delay: 0.24s;
+      }
+      @keyframes settle {
+        from {
+          transform: translateY(12px);
+        }
+        to {
+          transform: none;
+        }
+      }
+      .lot text {
+        font-family: var(--font-display);
+      }
+      .lot .name {
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .lot .sub {
+        font-family: var(--font-body);
+        font-size: 14px;
+      }
+      .lot.a .shape {
+        fill: var(--lot-navy);
+      }
+      .lot.a text {
+        fill: var(--on-lot-navy);
+      }
+      .lot.b .shape {
+        fill: var(--lot-teal);
+      }
+      .lot.c .shape {
+        fill: var(--lot-lime);
+      }
+      .lot.b text,
+      .lot.c text {
+        fill: var(--on-lot-light);
+      }
+      .plan figcaption {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .plan figcaption::before,
+      .plan figcaption::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--line-strong);
+      }
+      .plan figcaption span {
+        text-align: center;
+      }
+
+      /* Sections */
+      .section {
+        padding-block: clamp(56px, 8vw, 104px);
+      }
+      .section-head {
+        margin-bottom: clamp(24px, 4vw, 44px);
+      }
+      .section h2 {
+        font-weight: 600;
+        font-size: clamp(2rem, 4.4vw, 3rem);
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+      }
+
+      /* Products */
+      .products {
+        border-top: 1px solid var(--line);
+      }
+      .product {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        gap: clamp(16px, 3vw, 36px);
+        align-items: start;
+        padding-block: clamp(28px, 4vw, 44px);
+        border-bottom: 1px solid var(--line);
+      }
+      .glyph {
+        width: 56px;
+        height: 56px;
+      }
+      .glyph.navy {
+        background: var(--lot-navy);
+        clip-path: polygon(0 0, 100% 0, 100% 62%, 62% 100%, 0 100%);
+      }
+      .glyph.teal {
+        background: var(--lot-teal);
+        clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%, 0 38%);
+      }
+      .glyph.lime {
+        background: var(--lot-lime);
+        clip-path: polygon(0 0, 62% 0, 100% 38%, 100% 100%, 0 100%);
+      }
+      .product .kind {
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+      .product h3 {
+        font-weight: 600;
+        font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-top: 0.3rem;
+      }
+      .product .desc {
+        margin-top: 0.75rem;
+        max-width: 36rem;
+        font-size: 1.1rem;
+      }
+      .product .aside {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 14px;
+        min-width: 190px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.92rem;
+        font-weight: 500;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid var(--line-strong);
+        background: var(--surface);
+      }
+      .chip.soon {
+        border-style: dashed;
+        color: var(--muted);
+      }
+      .chip.live::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--live);
+      }
+
+      /* About */
+      .about {
+        background: var(--surface);
+        border-block: 1px solid var(--line);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: clamp(28px, 6vw, 88px);
+      }
+      .about .body p {
+        font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+        line-height: 1.5;
+        max-width: 38rem;
+      }
+      .about .body p + p {
+        margin-top: 1.4rem;
+        color: var(--muted);
+      }
+
+      /* Contact */
+      .contact {
+        padding-block: clamp(48px, 7vw, 88px);
+      }
+      .contact-band {
+        position: relative;
+        overflow: hidden;
+        background: var(--band);
+        color: var(--on-band);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: clamp(28px, 5vw, 64px);
+      }
+      .contact-band > * {
+        position: relative;
+      }
+      .contact-band h2 {
+        font-size: 1.1rem;
+        font-family: var(--font-body);
+        font-weight: 500;
+        color: var(--on-band-muted);
+        letter-spacing: 0;
+      }
+      .contact-band .ask {
+        margin-top: 1rem;
+        max-width: 30rem;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(1.8rem, 4.2vw, 2.9rem);
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+      }
+      .mail-row {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 16px;
+      }
+      .mail {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        user-select: all;
+        overflow-wrap: anywhere;
+      }
+      .contact-band .btn {
+        background: var(--on-band);
+        color: #07182b;
+        border-color: var(--on-band);
+      }
+      .contact-band .btn.ghost {
+        background: transparent;
+        color: var(--on-band);
+        border-color: rgba(234, 242, 248, 0.4);
+      }
+      .contact-band .btn.ghost:hover {
+        border-color: var(--on-band);
+      }
+      .contact-band :focus-visible {
+        outline-color: var(--lot-lime);
+      }
+      .btn-row {
+        margin-top: 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+      }
+      .copied {
+        font-size: 0.95rem;
+        color: var(--on-band-muted);
+        min-height: 1.4em;
+      }
+      .fb {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+      }
+      .fb a {
+        color: var(--on-band);
+        text-underline-offset: 4px;
+      }
+      .watermark {
+        position: absolute !important;
+        right: -40px;
+        bottom: -50px;
+        width: min(46%, 380px);
+        opacity: 0.1;
+        pointer-events: none;
+      }
+
+      /* Footer */
+      .site-footer {
+        border-top: 1px solid var(--line);
+        padding-block: 32px 40px;
+      }
+      .foot {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px 32px;
+      }
+      .foot img {
+        height: 26px;
+        width: auto;
+      }
+      .foot p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .foot nav {
+        display: flex;
+        gap: 20px;
+      }
+      .foot nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .foot nav a:hover {
+        color: var(--fg);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      a.inline {
+        color: var(--link);
+        font-weight: 600;
+        text-underline-offset: 4px;
+      }
+
+      @media (max-width: 920px) {
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .about-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .plan {
+          max-width: 560px;
+        }
+      }
+      @media (max-width: 720px) {
+        .bar .btn {
+          display: none;
+        }
+        .brand img {
+          height: 28px;
+        }
+        .nav {
+          gap: 16px;
+        }
+        .product {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 16px;
+        }
+        .product .aside {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+          min-width: 0;
+        }
+        .glyph {
+          width: 44px;
+          height: 44px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .lot {
+          animation: none;
+        }
+        .btn {
+          transition: none;
+        }
+      }
+
+      /* ---- Expansion ---- */
+      .hide-s {
+        display: inline;
+      }
+      .lot-link {
+        cursor: pointer;
+      }
+      .lot-link:focus-visible {
+        outline: none;
+      }
+      .lot-link:focus-visible .shape {
+        stroke: var(--fg);
+        stroke-width: 4;
+      }
+      .lot .shape {
+        transition: filter 0.2s ease;
+      }
+      .lot-link:hover .shape {
+        filter: brightness(1.1);
+      }
+      .plan figcaption {
+        margin-bottom: 0;
+      }
+
+      .titleblock {
+        margin: 16px 0 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border: 1px solid var(--line-strong);
+        background: var(--surface);
+      }
+      .titleblock div {
+        padding: 10px 12px;
+        border-left: 1px solid var(--line-strong);
+        min-width: 0;
+      }
+      .titleblock div:first-child {
+        border-left: 0;
+      }
+      .titleblock dt {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .titleblock dd {
+        margin: 2px 0 0;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.98rem;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+      }
+
+      .section-note {
+        margin-top: 0.75rem;
+        color: var(--muted);
+        font-size: 1.1rem;
+        max-width: 36rem;
+      }
+      .product:target {
+        background: linear-gradient(
+          90deg,
+          color-mix(in srgb, var(--lot-lime) 14%, transparent),
+          transparent 70%
+        );
+      }
+      .product .for {
+        margin-top: 0.9rem;
+        font-size: 0.98rem;
+        color: var(--muted);
+        max-width: 36rem;
+      }
+      .product .for span {
+        font-weight: 600;
+        color: var(--fg);
+        margin-right: 0.35rem;
+      }
+
+      /* Agency services */
+      .agency {
+        background: var(--surface);
+        border-top: 1px solid var(--line);
+      }
+      .agency-head {
+        margin-bottom: clamp(28px, 4vw, 48px);
+        max-width: 44rem;
+      }
+      .svc {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0 clamp(24px, 4vw, 56px);
+      }
+      .svc li {
+        border-top: 1px solid var(--line-strong);
+        padding-block: 24px 36px;
+        min-width: 0;
+      }
+      .svc h3 {
+        font-weight: 600;
+        font-size: 1.45rem;
+        letter-spacing: -0.015em;
+        line-height: 1.15;
+      }
+      .svc p {
+        margin-top: 0.6rem;
+        color: var(--muted);
+        max-width: 22rem;
+      }
+      .svc .svc-cta {
+        border-top-color: var(--lot-lime);
+        border-top-width: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .svc .svc-cta p {
+        color: var(--fg);
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      /* About, extended */
+      .about {
+        background: var(--bg);
+        border-block: 1px solid var(--line);
+      }
+      .shared,
+      .loop {
+        margin-top: clamp(48px, 6vw, 80px);
+      }
+      .shared h3,
+      .loop h3 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        letter-spacing: -0.015em;
+        margin-bottom: 20px;
+      }
+      .shared ul,
+      .loop ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0 clamp(20px, 3vw, 40px);
+      }
+      .shared li,
+      .loop li {
+        border-top: 1px solid var(--line-strong);
+        padding-block: 18px 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+      }
+      .shared b,
+      .loop b {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
+      }
+      .shared span,
+      .loop span {
+        color: var(--muted);
+      }
+      .loop ol {
+        counter-reset: step;
+      }
+      .loop li {
+        counter-increment: step;
+        position: relative;
+        padding-left: 52px;
+      }
+      .loop li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 14px;
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.05rem;
+        background: var(--lot-navy);
+        color: var(--on-lot-navy);
+        clip-path: polygon(0 0, 100% 0, 100% 65%, 65% 100%, 0 100%);
+      }
+      .loop li:nth-child(2)::before {
+        background: var(--lot-teal);
+        color: var(--on-lot-light);
+        clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
+      }
+      .loop li:nth-child(3)::before {
+        background: var(--lot-lime);
+        color: var(--on-lot-light);
+        clip-path: polygon(0 0, 65% 0, 100% 35%, 100% 100%, 0 100%);
+      }
+      .repeat {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      /* Contact, extended */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: start;
+      }
+      .contact-intro {
+        min-width: 0;
+      }
+      .contact-intro .ask {
+        font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+      }
+      .contact-intro .mail {
+        margin-top: 1.75rem;
+      }
+      .contact-intro .mail span {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+        user-select: all;
+        overflow-wrap: anywhere;
+      }
+      .panel {
+        background: var(--panel);
+        color: var(--fg);
+        border-radius: 8px;
+        padding: clamp(20px, 3vw, 32px);
+        min-width: 0;
+        border: 1px solid var(--line);
+      }
+      .panel fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0 0 20px;
+        min-width: 0;
+      }
+      .panel legend {
+        font-weight: 600;
+        padding: 0;
+        margin-bottom: 10px;
+      }
+      .topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .topics label {
+        position: relative;
+        display: block;
+      }
+      .topics input {
+        position: absolute;
+        opacity: 0;
+        inset: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+      .topics span {
+        display: block;
+        padding: 0.5rem 0.9rem;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        border: 1px solid var(--line-strong);
+        background: transparent;
+        color: var(--fg);
+        transition:
+          background-color 0.15s ease,
+          color 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .topics input:hover + span {
+        border-color: var(--fg);
+      }
+      .topics input:checked + span {
+        background: var(--btn-bg);
+        color: var(--btn-fg);
+        border-color: var(--btn-bg);
+      }
+      .topics input:focus-visible + span {
+        outline: 3px solid var(--link);
+        outline-offset: 2px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .field label {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .field input,
+      .field textarea {
+        font: inherit;
+        color: var(--fg);
+        background: var(--bg);
+        border: 1px solid var(--line-strong);
+        border-radius: 6px;
+        padding: 0.75rem 0.9rem;
+        width: 100%;
+        resize: vertical;
+      }
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: var(--muted);
+        opacity: 0.8;
+      }
+      .field input:focus-visible,
+      .field textarea:focus-visible {
+        outline: 3px solid var(--link);
+        outline-offset: 1px;
+      }
+      .field [aria-invalid="true"] {
+        border-color: #c2410c;
+      }
+      .err {
+        color: #b93a0b;
+        font-size: 0.92rem;
+      }
+      :root[data-theme="dark"] .err {
+        color: #ff9a6b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .err {
+          color: #ff9a6b;
+        }
+      }
+      .panel .btn {
+        background: var(--btn-bg);
+        color: var(--btn-fg);
+        border-color: var(--btn-bg);
+      }
+      .panel .btn.ghost {
+        background: transparent;
+        color: var(--fg);
+        border-color: var(--line-strong);
+      }
+      .panel .btn.ghost:hover {
+        border-color: var(--fg);
+      }
+      .panel :focus-visible {
+        outline-color: var(--link);
+      }
+      .draft[hidden] {
+        display: none;
+      }
+      .draft-title {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+      .draft-note {
+        margin-top: 0.4rem;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+      .draft pre {
+        margin: 16px 0 4px;
+        padding: 14px 16px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        font: 0.92rem/1.55 var(--font-body);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        max-height: 16rem;
+        overflow: auto;
+      }
+      .draft .copied {
+        color: var(--muted);
+      }
+
+      /* Footer, extended */
+      .site-footer {
+        padding-block: 48px 28px;
+      }
+      .foot-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+        gap: 32px;
+      }
+      .foot-brand img {
+        height: 28px;
+        width: auto;
+      }
+      .foot-brand p {
+        margin-top: 14px;
+        color: var(--muted);
+        max-width: 20rem;
+        font-size: 0.98rem;
+      }
+      .site-footer h4 {
+        margin: 0 0 12px;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .site-footer nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .site-footer nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.98rem;
+      }
+      .site-footer nav a:hover {
+        color: var(--fg);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      .foot-mail p {
+        color: var(--muted);
+        font-size: 0.98rem;
+        overflow-wrap: anywhere;
+      }
+      .foot-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .foot-bottom p,
+      .foot-bottom a {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .foot-bottom a {
+        text-underline-offset: 4px;
+      }
+      .foot-bottom a:hover {
+        color: var(--fg);
+      }
+
+      @media (max-width: 1020px) {
+        .svc {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .foot-top {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 920px) {
+        .contact-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .shared ul,
+        .loop ol {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      @media (max-width: 720px) {
+        .hide-s {
+          display: none;
+        }
+        .titleblock {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .titleblock div:nth-child(3) {
+          border-left: 0;
+        }
+        .titleblock div:nth-child(n + 3) {
+          border-top: 1px solid var(--line-strong);
+        }
+        .svc {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .foot-top {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .lot .shape,
+        .topics span {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap bar">
+        <a class="brand" href="#top" aria-label="TechYard home">
+          <img
+            class="only-light"
+            src="assets/logo.png"
+            alt="TechYard"
+            width="120"
+            height="26"
+          />
+          <img
+            class="only-dark"
+            src="assets/logo-dark.png"
+            alt="TechYard"
+            width="120"
+            height="26"
+          />
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a class="link" href="#products">Products</a>
+          <a class="link" href="#about">About</a>
+          <a class="link" href="#contact">Contact</a>
+          <a class="btn small" href="#contact">Contact us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="wrap hero-grid">
+          <div>
+            <h1><span>One yard.</span> <span>Three businesses.</span></h1>
+            <p class="lead">
+              TechYard is a Bangladesh company that builds and runs digital
+              businesses: a reselling app, an online shop and an agency for
+              other businesses.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="#products">See our products</a>
+              <a class="btn ghost" href="#contact">Contact us</a>
+            </div>
+            <p class="where"><i aria-hidden="true"></i>Based in Bangladesh</p>
+          </div>
+
+          <figure class="plan">
+            <svg
+              viewBox="0 0 520 440"
+              role="group"
+              aria-label="Site plan of the TechYard yard split into three lots. Select a lot to jump to that business."
+            >
+              <rect class="plot" x="8" y="8" width="504" height="424" rx="2" />
+              <path
+                class="tick"
+                d="M8 34V8h26M486 8h26v26M512 406v26h-26M34 432H8v-26"
+              />
+              <a
+                class="lot-link"
+                href="#dropdoor"
+                aria-label="DropDoor, reselling app"
+              >
+                <g class="lot a">
+                  <path class="shape" d="M38 38H266V346L210 402H38Z" />
+                  <text class="name" x="62" y="96" font-size="34">
+                    DropDoor
+                  </text>
+                  <text class="sub" x="62" y="122">Reselling app</text>
+                  <text class="sub" x="62" y="372">Android app</text>
+                </g>
+              </a>
+              <a
+                class="lot-link"
+                href="#hullor"
+                aria-label="Hullor Shop, online shop"
+              >
+                <g class="lot b">
+                  <path class="shape" d="M322 38H482V228H282V78Z" />
+                  <text class="name" x="306" y="112" font-size="28">
+                    Hullor Shop
+                  </text>
+                  <text class="sub" x="306" y="138">Online shop</text>
+                  <text class="sub" x="306" y="204">Live</text>
+                </g>
+              </a>
+              <a
+                class="lot-link"
+                href="#agency-row"
+                aria-label="Digital agency, name coming soon"
+              >
+                <g class="lot c">
+                  <path class="shape" d="M282 244H442L482 284V402H282Z" />
+                  <text class="name" x="306" y="316" font-size="24">
+                    Digital agency
+                  </text>
+                  <text class="sub" x="306" y="342">Name coming soon</text>
+                </g>
+              </a>
+            </svg>
+            <figcaption>
+              <span
+                >The shared yard: tools, know-how and one standard of work.
+                Select a lot to jump to it.</span
+              >
+            </figcaption>
+            <dl class="titleblock">
+              <div>
+                <dt>Plot</dt>
+                <dd>TechYard</dd>
+              </div>
+              <div>
+                <dt>Lots</dt>
+                <dd>3 businesses</dd>
+              </div>
+              <div>
+                <dt>Live now</dt>
+                <dd>Hullor Shop</dd>
+              </div>
+              <div>
+                <dt>Country</dt>
+                <dd>Bangladesh</dd>
+              </div>
+            </dl>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="products" style="padding-top: 0">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Products</h2>
+            <p class="section-note">
+              Three businesses, each with its own brand and customers.
+            </p>
+          </div>
+          <div class="products">
+            <article class="product" id="dropdoor">
+              <div class="glyph navy" aria-hidden="true"></div>
+              <div>
+                <p class="kind">Dropshipping and reselling app</p>
+                <h3>DropDoor</h3>
+                <p class="desc">
+                  An Android app where resellers sell products without holding
+                  stock.
+                </p>
+                <p class="for">
+                  <span>Made for</span> People who want to resell without buying
+                  stock first.
+                </p>
+              </div>
+              <div class="aside">
+                <span class="chip">Android app</span>
+                <a
+                  class="btn small"
+                  href="https://play.google.com/store/apps/details?id=dropdoor.app"
+                  target="_blank"
+                  rel="noopener"
+                  >Get it on Google Play</a
+                >
+                <a
+                  class="btn ghost small"
+                  href="#contact"
+                  data-topic="Sell through DropDoor"
+                  >Ask about DropDoor</a
+                >
+              </div>
+            </article>
+
+            <article class="product" id="hullor">
+              <div class="glyph teal" aria-hidden="true"></div>
+              <div>
+                <p class="kind">Retail brand</p>
+                <h3>Hullor Shop</h3>
+                <p class="desc">
+                  Our own shop for customers, on the web, on Android and on
+                  Facebook.
+                </p>
+                <p class="for">
+                  <span>Made for</span> Customers who shop online, wherever they
+                  already are.
+                </p>
+              </div>
+              <div class="aside">
+                <span class="chip live">Live</span>
+                <a
+                  class="btn ghost small"
+                  href="https://tryhullor.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Visit tryhullor.com</a
+                >
+              </div>
+            </article>
+
+            <article class="product" id="agency-row">
+              <div class="glyph lime" aria-hidden="true"></div>
+              <div>
+                <p class="kind">Digital solutions for businesses</p>
+                <h3>Digital agency</h3>
+                <p class="desc">
+                  Digital marketing, websites and apps, Facebook page setup,
+                  video editing and content making.
+                </p>
+              </div>
+              <div class="aside">
+                <span class="chip soon">Name coming soon</span>
+                <a
+                  class="btn ghost small"
+                  href="#contact"
+                  data-topic="Work with the agency"
+                  >Talk to us</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="wrap">
+          <div class="about-grid">
+            <h2>How TechYard works</h2>
+            <div class="body">
+              <p>
+                TechYard is the parent company. Each product has its own brand,
+                its own customers and its own team focus, while sharing tools,
+                know-how and a single standard of work.
+              </p>
+              <p>
+                We start small, launch fast and improve with real feedback from
+                the people who use what we build.
+              </p>
+            </div>
+          </div>
+
+          <div class="shared">
+            <h3>What every business shares</h3>
+            <ul>
+              <li>
+                <b>Tools</b
+                ><span>Each team starts from the same set, not from zero.</span>
+              </li>
+              <li>
+                <b>Know-how</b
+                ><span>What one product learns, the others get.</span>
+              </li>
+              <li>
+                <b>One standard of work</b
+                ><span>The same bar for quality across every brand.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="loop">
+            <h3>How each product gets built</h3>
+            <ol>
+              <li>
+                <b>Start small</b
+                ><span>Build the smallest version that is useful.</span>
+              </li>
+              <li>
+                <b>Launch fast</b
+                ><span>Put it in front of real people early.</span>
+              </li>
+              <li>
+                <b>Improve with feedback</b
+                ><span>Let what customers say decide what comes next.</span>
+              </li>
+            </ol>
+            <p class="repeat">Then we go around again.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <div class="contact-band">
+            <img
+              class="watermark"
+              src="assets/mark-dark.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="contact-grid">
+              <div class="contact-intro">
+                <h2>Contact</h2>
+                <p class="ask">
+                  Want to work with us, sell through DropDoor or build something
+                  together?
+                </p>
+                <p class="mail"><span id="mail">hello@techyard.asia</span></p>
+                <div class="btn-row">
+                  <a class="btn" href="mailto:hello@techyard.asia">Email us</a>
+                  <button class="btn ghost" type="button" id="copy">
+                    Copy address
+                  </button>
+                  <span
+                    class="copied"
+                    id="copied"
+                    role="status"
+                    aria-live="polite"
+                  ></span>
+                </div>
+                <p class="fb">
+                  <a href="https://facebook.com/" target="_blank" rel="noopener"
+                    >TechYard on Facebook</a
+                  >
+                </p>
+              </div>
+
+              <div class="panel">
+                <form id="msg" novalidate>
+                  <fieldset>
+                    <legend>What is this about?</legend>
+                    <div class="topics">
+                      <label
+                        ><input
+                          type="radio"
+                          name="topic"
+                          value="Sell through DropDoor"
+                          checked
+                        /><span>Sell through DropDoor</span></label
+                      >
+                      <label
+                        ><input
+                          type="radio"
+                          name="topic"
+                          value="Work with the agency"
+                        /><span>Work with the agency</span></label
+                      >
+                      <label
+                        ><input
+                          type="radio"
+                          name="topic"
+                          value="Build something together"
+                        /><span>Build something together</span></label
+                      >
+                      <label
+                        ><input
+                          type="radio"
+                          name="topic"
+                          value="Something else"
+                        /><span>Something else</span></label
+                      >
+                    </div>
+                  </fieldset>
+                  <div class="field">
+                    <label for="f-name">Your name</label>
+                    <input
+                      id="f-name"
+                      name="name"
+                      type="text"
+                      autocomplete="name"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="f-msg">Your message</label>
+                    <textarea
+                      id="f-msg"
+                      name="message"
+                      rows="4"
+                      placeholder="Tell us what you have in mind"
+                    ></textarea>
+                    <p class="err" id="f-err" hidden>
+                      Write a short message so we know how to help.
+                    </p>
+                  </div>
+                  <button class="btn" type="submit">Prepare my email</button>
+                </form>
+
+                <div class="draft" id="draft" hidden>
+                  <p class="draft-title">Your email is ready</p>
+                  <p class="draft-note">
+                    Send it to <b>hello@techyard.asia</b> from your email app,
+                    or copy it.
+                  </p>
+                  <pre id="draft-text"></pre>
+                  <div class="btn-row">
+                    <a
+                      class="btn small"
+                      id="draft-mail"
+                      href="mailto:hello@techyard.asia"
+                      >Open in email app</a
+                    >
+                    <button
+                      class="btn ghost small"
+                      type="button"
+                      id="draft-copy"
+                    >
+                      Copy message
+                    </button>
+                    <button
+                      class="btn ghost small"
+                      type="button"
+                      id="draft-edit"
+                    >
+                      Edit
+                    </button>
+                    <span
+                      class="copied"
+                      id="draft-note-live"
+                      role="status"
+                      aria-live="polite"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="foot-top">
+          <div class="foot-brand">
+            <img
+              class="only-light"
+              src="assets/logo.png"
+              alt="TechYard"
+              width="120"
+              height="26"
+            />
+            <img
+              class="only-dark"
+              src="assets/logo-dark.png"
+              alt="TechYard"
+              width="120"
+              height="26"
+            />
+            <p>
+              The parent company behind DropDoor, Hullor Shop and our digital
+              agency.
+            </p>
+          </div>
+          <nav aria-label="Footer products">
+            <h4>Products</h4>
+            <a href="#dropdoor">DropDoor</a>
+            <a href="#hullor">Hullor Shop</a>
+            <a href="#agency-row">Digital agency</a>
+          </nav>
+          <nav aria-label="Footer company">
+            <h4>Company</h4>
+            <a href="#about">How we work</a>
+            <a href="#contact">Contact</a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener"
+              >Facebook</a
+            >
+          </nav>
+          <div class="foot-mail">
+            <h4>Write to us</h4>
+            <p>hello@techyard.asia</p>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2026 TechYard. Bangladesh.</p>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var EMAIL = "hello@techyard.asia";
+
+        function selectNode(node) {
+          try {
+            var r = document.createRange();
+            r.selectNodeContents(node);
+            var s = window.getSelection();
+            s.removeAllRanges();
+            s.addRange(r);
+          } catch (e) {}
+        }
+        function copyText(text, noteEl, node) {
+          function ok() {
+            noteEl.textContent = "Copied";
+            setTimeout(function () {
+              noteEl.textContent = "";
+            }, 2500);
+          }
+          function fail() {
+            selectNode(node);
+            noteEl.textContent = "Press Ctrl+C to copy";
+          }
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(ok, fail);
+            } else {
+              fail();
+            }
+          } catch (e) {
+            fail();
+          }
+        }
+
+        var copyBtn = document.getElementById("copy");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", function () {
+            copyText(
+              EMAIL,
+              document.getElementById("copied"),
+              document.getElementById("mail"),
+            );
+          });
+        }
+
+        // Buttons elsewhere on the page preselect the matching topic in the contact form.
+        var topics = document.querySelectorAll('input[name="topic"]');
+        document.querySelectorAll("[data-topic]").forEach(function (a) {
+          a.addEventListener("click", function () {
+            var t = a.getAttribute("data-topic");
+            topics.forEach(function (r) {
+              r.checked = r.value === t;
+            });
+          });
+        });
+
+        var form = document.getElementById("msg");
+        var draft = document.getElementById("draft");
+        var draftText = document.getElementById("draft-text");
+        var draftMail = document.getElementById("draft-mail");
+        var err = document.getElementById("f-err");
+        var msg = document.getElementById("f-msg");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var topic =
+            (form.querySelector('input[name="topic"]:checked') || {}).value ||
+            "Something else";
+          var name = document.getElementById("f-name").value.trim();
+          var text = msg.value.trim();
+          if (!text) {
+            err.hidden = false;
+            msg.setAttribute("aria-invalid", "true");
+            msg.focus();
+            return;
+          }
+          err.hidden = true;
+          msg.removeAttribute("aria-invalid");
+          var subject = topic + (name ? " - " + name : "");
+          var body = "Hello TechYard,\n\n" + text + "\n\n" + (name ? name : "");
+          draftText.textContent =
+            "To: " + EMAIL + "\nSubject: " + subject + "\n\n" + body.trim();
+          draftMail.href =
+            "mailto:" +
+            EMAIL +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body.trim());
+          form.hidden = true;
+          draft.hidden = false;
+          draft.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        });
+        msg.addEventListener("input", function () {
+          if (msg.value.trim()) {
+            err.hidden = true;
+            msg.removeAttribute("aria-invalid");
+          }
+        });
+        document
+          .getElementById("draft-copy")
+          .addEventListener("click", function () {
+            copyText(
+              draftText.textContent,
+              document.getElementById("draft-note-live"),
+              draftText,
+            );
+          });
+        document
+          .getElementById("draft-edit")
+          .addEventListener("click", function () {
+            draft.hidden = true;
+            form.hidden = false;
+            msg.focus();
+          });
+      })();
+    </script>
+  </body>
+</html>
