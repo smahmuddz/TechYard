@@ -2,7 +2,7 @@
 
 This is the site for TechYard, the company behind DropDoor, Hullor Shop and the digital agency. It's one static page, no build step and nothing to install. I kept it that way on purpose so I can change a line of text and redeploy in a minute.
 
-Live on Vercel: techyard-ebon.vercel.app
+Live on Vercel: https://techyard-ebon.vercel.app
 
 ## What's in the folder
 
